@@ -255,9 +255,9 @@ class Goblin:
 
 
 class Child:
-    def __init__(self, location: tuple = (650, 330), size: tuple = (150, 150)):
+    def __init__(self, location: tuple = (650, 360), size: tuple = (105, 105)):
         self.child = pygame.image.load(os.path.join(
-            "assets", "goblins", "Goblin test.png"))
+            "assets", "child", "Child 1.png"))
         self.child = pygame.transform.scale(self.child, size)
 
         self.x, self.y = location
@@ -271,11 +271,10 @@ class Child:
 
         # HITBOXS
 
-        self.hitbox = pygame.Rect(self.x + self.width * 0.2, self.y +
-                                  self.height * 0.2, self.width * 0.6, self.height * 0.65)
+        self.hitbox = pygame.Rect(self.x, self.y, self.width, self.height)
 
         self.head_hitbox = pygame.Rect(
-            self.x + self.width * 0.2, self.y + self.height * 0.2, self.width * 0.6, self.height * 0.2)
+            self.x + self.width * 0.2, self.y, self.width * 0.6, self.height * 0.2)
 
     def blit(self, surface, hitboxes: bool = False):
         surface.blit(self.child, (self.x, self.y))
